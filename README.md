@@ -103,6 +103,7 @@ GitHub <a href="https://github.com/park-gb/mHealthApp-review-textmining/blob/mas
 
 ## 3. 재학습 결과
 - 1:1 비율 결과
+
 ||검증 정확도|
 |---|---|
 |Epoch 1||
