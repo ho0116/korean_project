@@ -102,6 +102,23 @@ GitHub <a href="https://github.com/park-gb/mHealthApp-review-textmining/blob/mas
 |4049|아주 재미있고 쓸모가 많은데 캐시를 더 쉽게 얻으면 좋겠네요...|1|
 
 ## 3. 재학습 결과
+- 1:1 비율 결과
+||검증 정확도|
+|---|---|
+|Epoch 1||
+|Epoch 2||
+|Epoch 3||
+|Epoch 4||
+
+- 1:1.7 비율 결과
+
+||검증 정확도|
+|---|---|
+|Epoch 1|0.82|
+|Epoch 2|0.84|
+|Epoch 3|0.86|
+|Epoch 4|0.85|
+
 ### 3.1 개발 환경
  - pycharm, python, torch, pandas, ...
  - 
