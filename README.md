@@ -9,7 +9,7 @@ KOELECTRA를 이용하여 Google Play Store의 캐시워크 앱 리뷰 긍부정
 
 Google Play Store는 구글의 디지털 콘텐츠 서비스로, 안드로이드 기기에서 이용 가능하며 2023년 4월 기준 약 68.6%으로 많은 사람들이 이용한다. <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide/">[2]</a> 사용자들은 앱을 다운받을 때 다른 사용자들의 평점과 리뷰를 주요 기준으로 삼아 결정한다. <a href="https://android-developers.googleblog.com/2021/08/making-ratings-and-reviews-better-for.html">[3]</a><br>
 
-<div align="center"><img src="https://github.com/ho0116/korean_project/assets/85285367/2dec9f82-7872-4a97-b8d2-878a19fd97fe"></div>
+<div align="left"><img src="https://github.com/ho0116/korean_project/assets/85285367/2dec9f82-7872-4a97-b8d2-878a19fd97fe"></div>
 캐시워크는 Google Play Store를 통해 다운로드할 수 있으며, 만보기 앱테크 중에서도 가장 일찍 또 널리 알려진 앱 중 하나이다. 아이지에이웍스가 자사의 데이터 분석 솔루션 모바일인덱스 고유의 알고리즘을 통해 아이지에이웍스 마케팅클라우드 <갓생 탐구생활> 리포트를 발표했다. 분석 기간은 2021년 1월 1일부터 2023년 3월 5일까지로 일평균 4000만 모바일 기기의 20억건 데이터(안드로이드, iOS 통합 데이터 기준)를 AI 알고리즘에 기반하여 분석했다. 2월 기준 사용자 수(MAU)와 2023년 3월 2일 기준 앱 일간 사용률(DAU)을 집계한 결과에 따르면, 리워드앱 캐시워크가 가장 많다는 것을 알 수 있다. <a href="https://www.madtimes.org/news/articleView.html?idxno=17018">[4]</a> 캐시워크는 걷기 운동을 통해 소비된 칼로리, 움직인 거리와 시간까지 계산해주고 걸으면 걸을수록 포인트가 쌓이며, 이렇게 쌓은 포인트는 앱 내 숍에서 편의점이나 카페와 같은 다양한 쿠폰을 구입할 수 있다. 사용자들은 건강을 챙기면서 동시에 혜택을 누릴 수 있어 많은 사람들에게 사랑받고 있는 앱이다. <a href="https://www.mk.co.kr/news/culture/10252024">[5]</a> <br> 
 캐시워크는 사용자들이 어떤 기능이나 서비스를 좋아하는지, 어떤 부분에서 경쟁사와 차별화되는지 등을 파악할 수 있으며, 사용자들이 원하는 기능을 강화하고 경쟁사와 차별화된 서비스를 제공할 수 있다. 이를 통해 리워드 앱에서의 경쟁력을 강화할 수 있다. 또한 사용자들의 리뷰를 통해 캐시워크의 브랜드 이미지와 고객 인식이 형성될 수 있다. 긍정적인 리뷰는 캐시워크의 이미지를 향상시키고 브랜드에 대한 고객들의 신뢰를 증대시킬 수 있다. 부정적인 리뷰는 캐시워크가 개선해야 할 부분을 도출하고 사용자들에게 더 나은 서비스를 제공하기 위한 노력을 보여줄 수 있다.
 
@@ -52,28 +52,8 @@ GitHub <a href="https://github.com/park-gb/mHealthApp-review-textmining/blob/mas
 
 ### 2.3 데이터 전처리
 
-1. 부정(0), 긍정(1)으로 분류  
-원본 데이터에서 리뷰와 평점을 추출하여 평점에서 중립인 3점을 제외하고, 1점과 2점은 부정(0)으로, 4점과 5점은 긍정(1)으로 분류한다. 긍정과 부정으로 분류한 데이터는 78,153건이 되었다.
-2. review에서 두개이상 연속된 마침표를 공백으로 대체, 한글 불포함행, 중복, 결측치 제거  
-한글 긍부정 예측이므로 한글이 없는 행은 필요가 없다고 판단하여 제거한다.
-```
-# 두 개 이상 연속된 마침표를 하나의 공백으로 대체 (ex: 하...제작자님)
-df['review'] = df['review'].apply(lambda x: re.sub(r'\.{2,}', ' ', x))
-# 한글 포함행만 추출
-df = df[df['review'].str.contains('[ㄱ-ㅎㅏ-ㅣ가-힣 ]')]
-# 중복 제거
-df.drop_duplicates(subset=['review'], inplace=True)
-# 결측치 제거
-df = df.dropna(how='any')
-```
-|제거|제거된 수|제거되고 남은 수|
-|---|---|---|
-|한글 불포함|1095|77058|
-|중복|13197|63861|
-|결측치|0|63861|
+원본 데이터에서 리뷰와 평점을 추출하여 사용한다. 평점에서 3점은 중립으로 판단하여 제외하고, 1점과 2점은 부정(0)으로, 4점과 5점은 긍정(1)으로 분류한다. 긍정과 부정으로 분류한 데이터는 78,153개가 되었다. 리뷰 중 "하...제작자님"과 같이 문장이 끝나지 않은 경우를 고려하여 두 개 이상 연속된 마침표는 공백으로 대체한다. 이번 분석의 목적은 한글 긍부정 예측이므로 한글이 없는 행은 필요가 없다고 판단하여 한글 포함행만 추출한다. 이 과정으로 1,095개의 데이터가 제거되었다. 모델이 특정 패턴을 과도하게 학습하는 것을 방지하기 위해 중복 데이터를 제거하였고, 이로 인해 13,191개의 데이터가 제거되었다. 또한, 데이터가 누락된 상태인 결측치는 모델 학습에 방해가 될 수 있으므로 제거하려했으나 제거할 결측치는 없었다. Google Play Store의 리뷰가 500자까지만 허용되고 15자 미만의 짧은 리뷰는 필요한 정보가 부족하다고 판단하여 총 17,551개를 제거하였다.이렇게 전처리를 진행한 후, 최종적으로 남은 데이터는 <b>46,310</b>개이다.  
 
-3. 문장길이 제한  
-15자 미만의 짧은 리뷰는 매우 제한적이며 정보가 부족하다고 판단했고 Google Play Store의 리뷰는 500자까지만 작성이 가능하므로 500자를 초과하는 것과 15자 미만의 리뷰 17551건을 제거한다. 
  - 리뷰 문장 15자 이상 500자 이하 길이 분포도   
 <div align="left"><img src="https://github.com/ho0116/korean_project/assets/85285367/788507d5-9b05-4b67-bfdc-3869a026b5c5" width="500"></div> 
 <br>
@@ -129,21 +109,46 @@ df = df.dropna(how='any')
 |:---:|:---:|
 |3240개|810개|
 
-
 ## 3. 재학습 결과
-
-- 검증 정확도
-
-||1:1 비율|1:1.7 비율|
-|:---:|:---:|:---:|
-|Epoch 1|0.77|0.84|
-|Epoch 2|0.85|0.83|
-|Epoch 3|0.82|0.85|
-|Epoch 4|0.85|0.86|
-
 ### 3.1 개발 환경
 <img src="https://img.shields.io/badge/pycharm-000000?style=flat-square&logo=pycharm&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/torch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/transformers-81c147?style=flat-square&logo=transformers&logoColor=white"/> <img src="https://img.shields.io/badge/scikit-learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white"/>
 ### 3.2 KOELECTRA fine-tuning
+KOELECTRA 모델을 fine-tuning하는 과정에서 두 가지 다른 데이터 세트를 사용했다. 첫 번째 세트는 1:1 비율로 구성된 3000개의 데이터이며, 두 번째 세트는 1:1.7 비율로 구성된 4050개의 데이터이다. 데이터를 학습시킨 후, 각 모델로 전체 데이터인 46310개를 사용하여 모델을 테스트했다.
 ### 3.3 학습 결과 그래프
+<div align="left"><img src="https://github.com/ho0116/korean_project/assets/85285367/fc12a17d-a262-4b10-9b22-65d6757c346e"></div>  
+
+<table>
+  <tr align="center"><th></th><th></th><th>Epoch 1</th><th>Epoch 2</th><th>Epoch 3</th><th>Epoch 4</th></tr>
+  <tr align="center"><th rowspan="2">1:1 비율</th><td>평균 학습 오차</td><td>약 0.54</td><td>약 0.42</td><td>약 0.37</td><td>약 0.30</td></tr>
+  <tr align="center"><td>검증 정확도</td><td>약 0.81</td><td>약 0.79</td><td>약 0.84</td><td>약 0.85</td></tr>
+  <tr align="center"><th rowspan="2">1:1.7 비율</th><td>평균 학습 오차</td><td>약 0.52</td><td>약 0.38</td><td>약 0.33</td><td>약 0.26</td></tr>
+  <tr align="center"><td>검증 정확도</td><td>약 0.83</td><td>약 0.84</td><td>약 0.84</td><td>약 0.85</td></tr>
+</table>
+
+- 1:1 비율 모델을 전체 데이터(46310개)에 적용한 결과
+```
+test steps :  1 Accuracy :  0.875
+test steps :  2 Accuracy :  0.875
+test steps :  3 Accuracy :  0.75
+...
+test steps :  5787 Accuracy :  0.875
+test steps :  5788 Accuracy :  0.875
+test steps :  5789 Accuracy :  1.0
+Accuracy: 0.84
+test took: 1:38:04
+```
+
+- 1:1.7 비율 모델을 전체 데이터(46310개)에 적용한 결과
+```
+test steps :  1 Accuracy :  0.875
+test steps :  2 Accuracy :  0.875
+test steps :  3 Accuracy :  0.625
+...
+test steps :  5787 Accuracy :  0.875
+test steps :  5788 Accuracy :  0.75
+test steps :  5789 Accuracy :  1.0
+Accuracy: 0.85
+test took: 1:32:31
+```
 
 ## 4. 배운점
