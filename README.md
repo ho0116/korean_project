@@ -116,7 +116,7 @@ GitHub <a href="https://github.com/park-gb/mHealthApp-review-textmining/blob/mas
 ### 3.1 개발 환경
 <img src="https://img.shields.io/badge/pycharm-000000?style=flat-square&logo=pycharm&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/torch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/transformers-81c147?style=flat-square&logo=transformers&logoColor=white"/> <img src="https://img.shields.io/badge/scikit-learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white"/>
 ### 3.2 KOELECTRA fine-tuning
-KOELECTRA 모델을 fine-tuning하는 과정에서 두 가지 다른 데이터 세트를 사용했다. 첫 번째 세트는 1:1 비율로 구성된 3000개의 데이터이며, 두 번째 세트는 1:1.7 비율로 구성된 4050개의 데이터이다. 데이터를 학습시킨 후, 각 모델로 전체 데이터인 46310개를 사용하여 모델을 테스트했다.
+KOELECTRA 모델을 fine-tuning하는 과정에서 두 가지 다른 데이터 세트를 사용했다. 첫 번째 세트는 1:1 비율로 구성된 3000개의 데이터이며, 두 번째 세트는 1:1.7 비율로 구성된 4050개의 데이터이다. 데이터를 학습시킨 후, 각 모델을 전체 데이터인 46310개에 적용하여 모델을 테스트했다.
 ### 3.3 학습 결과 그래프
 <div align="left"><img src="https://github.com/ho0116/korean_project/assets/85285367/fc12a17d-a262-4b10-9b22-65d6757c346e"></div>  
 
