@@ -10,9 +10,10 @@ KOELECTRA를 이용하여 Google Play Store의 캐시워크 앱 리뷰 긍부정
 Google Play Store는 구글의 디지털 콘텐츠 서비스로, 안드로이드 기기에서 이용 가능하며 2023년 4월 기준 약 68.6%으로 많은 사람들이 이용한다. <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide/">[2]</a> 사용자들은 앱을 다운받을 때 다른 사용자들의 평점과 리뷰를 주요 기준으로 삼아 결정한다. <a href="https://android-developers.googleblog.com/2021/08/making-ratings-and-reviews-better-for.html">[3]</a><br>
 
 
-<img src="https://github.com/user-attachments/assets/e0da0ebb-fff8-44c4-a36c-a9c352bc95d6" alt="이미지 설명" width="500px" />
-
-<img src="https://github.com/user-attachments/assets/93aea85d-88b7-406d-a3f4-68617581480a" alt="이미지 설명" width="500px" />
+<div style="display: flex; gap: 10px; align-items: left;">
+    <img src="https://github.com/user-attachments/assets/e0da0ebb-fff8-44c4-a36c-a9c352bc95d6" alt="이미지 설명" width="350px" />
+    <img src="https://github.com/user-attachments/assets/93aea85d-88b7-406d-a3f4-68617581480a" alt="이미지 설명" width="350px" />
+</div>
 
 
 캐시워크는 Google Play Store를 통해 다운로드할 수 있으며, 만보기 앱테크 중에서도 가장 일찍 또 널리 알려진 앱 중 하나이다. 아이지에이웍스가 자사의 데이터 분석 솔루션 모바일인덱스 고유의 알고리즘을 통해 아이지에이웍스 마케팅클라우드 <갓생 탐구생활> 리포트를 발표했다. 분석 기간은 2021년 1월 1일부터 2023년 3월 5일까지로 일평균 4000만 모바일 기기의 20억건 데이터(안드로이드, iOS 통합 데이터 기준)를 AI 알고리즘에 기반하여 분석했다. 2월 기준 사용자 수(MAU)와 2023년 3월 2일 기준 앱 일간 사용률(DAU)을 집계한 결과에 따르면, 리워드앱 캐시워크가 가장 많다는 것을 알 수 있다. <a href="https://www.madtimes.org/news/articleView.html?idxno=17018">[4]</a> 캐시워크는 걷기 운동을 통해 소비된 칼로리, 움직인 거리와 시간까지 계산해주고 걸으면 걸을수록 포인트가 쌓이며, 이렇게 쌓은 포인트는 앱 내 숍에서 편의점이나 카페와 같은 다양한 쿠폰을 구입할 수 있다. 사용자들은 건강을 챙기면서 동시에 혜택을 누릴 수 있어 많은 사람들에게 사랑받고 있는 앱이다. <a href="https://www.mk.co.kr/news/culture/10252024">[5]</a> <br> 
