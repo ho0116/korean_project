@@ -11,8 +11,8 @@ Google Play Store는 구글의 디지털 콘텐츠 서비스로, 안드로이드
 
 
 <div style="display: flex; gap: 10px; align-items: left;">
-    <img src="https://github.com/user-attachments/assets/e0da0ebb-fff8-44c4-a36c-a9c352bc95d6" alt="이미지 설명" width="350px" />
-    <img src="https://github.com/user-attachments/assets/93aea85d-88b7-406d-a3f4-68617581480a" alt="이미지 설명" width="350px" />
+    <img src="https://github.com/user-attachments/assets/e0da0ebb-fff8-44c4-a36c-a9c352bc95d6" alt="이미지 설명" width="400px" />
+    <img src="https://github.com/user-attachments/assets/93aea85d-88b7-406d-a3f4-68617581480a" alt="이미지 설명" width="400px" />
 </div>
 
 
